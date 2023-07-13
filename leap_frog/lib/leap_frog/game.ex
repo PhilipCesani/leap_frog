@@ -11,10 +11,19 @@ defmodule LeapFrog.Game do
     %{game| leaps: [leap|game.leaps]}
   end
 
-  def show([]), do: IO.puts("")
-  def show([head|tail]) do
-    IO.puts(head)
-    show(tail)
+  def show(%{answer: answer, leaps: [answer | _rest]} = game) do
+    game.leaps
+      |> Enum.reverse
+      |> Enum.join(" |> ")
+  end
+
+  def show(game) do
+    left =
+      game.leaps
+      |> Enum.reverse
+      |> Enum.join(" |> ")
+    right = "... #{game.answer}"
+    left <> right
   end
 
 end
