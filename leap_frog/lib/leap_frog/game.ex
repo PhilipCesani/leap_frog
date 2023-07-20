@@ -1,5 +1,3 @@
-##ToDo - Add converter to "show" the data in a pretty way
-
 defmodule LeapFrog.Game do
   defstruct [:answer, leaps: []]
 
