@@ -1,12 +1,5 @@
 defmodule LeapFrog.Errors do
-  # not a 4 letter word in dict
-  # not a leap
-
-  # HW - stitch error condictions together if good -> make move, else stitch errors together
-  # server is going to use this mod to check for errors
-  # go to elixir schools to learn the with command
-
-  def not_a_word(word) do
+   def not_a_word(word) do
     if LeapFrog.Dictionary.member?(word) do
       {:ok, word}
     else
